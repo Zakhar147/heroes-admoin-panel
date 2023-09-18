@@ -23,3 +23,10 @@ export const filtersFetched = (filters) => {
         payload: filters
     }
 }
+
+export const heroAddToState = (data) => {
+    return {
+        type: 'HERO_ADD',
+        payload: data
+    }
+}
