@@ -24,9 +24,16 @@ export const filtersFetched = (filters) => {
     }
 }
 
-export const heroAddToState = (data) => {
+export const updateHeroesState_heroAdd = (data) => {
     return {
-        type: 'HERO_ADD',
+        type: 'HEROES_UPDATE_ADD',
+        payload: data
+    }
+}
+
+export const updateHeroesState_heroDel = (data) => {
+    return {
+        type: 'HEROES_UPDATE_DEL',
         payload: data
     }
 }

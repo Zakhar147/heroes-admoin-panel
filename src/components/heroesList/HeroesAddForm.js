@@ -6,7 +6,7 @@ import { filtersFetched } from "../../actions";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { heroAddToState } from "../../actions"; 
+import { updateHeroesState_heroAdd } from "../../actions"; 
 
 
 const HeroesAddForm = () => {
@@ -49,15 +49,14 @@ const HeroesAddForm = () => {
   return (
     <Formik
       initialValues={{
-        id: uuidv4(),
         name: "",
         description: "",
       }}
       onSubmit={(values) => {
-        const data = JSON.stringify(values, null, 2);
+        const data = JSON.stringify({id: uuidv4(), ...values}, null, 2);
         request("http://localhost:3001/heroes", "POST", data)
                .then(request("http://localhost:3001/heroes"))
-               .then(data => dispatch(heroAddToState(data)));
+               .then(data => dispatch(updateHeroesState_heroAdd(data)))
       }}
     >
       <Form className="border p-4 shadow-lg rounded">

@@ -27,10 +27,15 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 filters: action.payload
             }
-        case 'HERO_ADD':
+        case 'HEROES_UPDATE_ADD':
             return {
                 ...state,
                 heroes: [...state.heroes, action.payload]
+            }
+        case 'HEROES_UPDATE_DEL':
+            return {
+                ...state,
+                heroes: state.heroes.filter(item => item.id !== action.payload.id)
             }
         default: return state
     }

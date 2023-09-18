@@ -1,28 +1,16 @@
 {
   "heroes": [
     {
-      "id": 1,
-      "name": "Первый герой",
-      "description": "Первый герой в рейтинге!",
+      "id": "1bd7f1ee-aeed-40a0-908f-d433e8742bba",
+      "name": "Миксим ",
+      "description": "плавать ",
       "element": "fire"
     },
     {
-      "id": 2,
-      "name": "Неизвестный герой",
-      "description": "Скрывающийся в тени",
+      "id": "dd8c46f7-b4e7-43f1-916b-c4f26d7f77f1",
+      "name": "Захар ",
+      "description": "бешать ",
       "element": "wind"
-    },
-    {
-      "id": 3,
-      "name": "Морской герой",
-      "description": "Как аквамен, но не из DC",
-      "element": "water"
-    },
-    {
-      "id": "264946e2-d645-4b79-9d8f-7da39eea2253",
-      "name": "Максим ",
-      "description": "умеет прыгать ",
-      "element": "wather"
     }
   ],
   "filters": [
