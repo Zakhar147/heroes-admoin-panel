@@ -1,23 +1,44 @@
 {
   "heroes": [
     {
-      "id": "1bd7f1ee-aeed-40a0-908f-d433e8742bba",
-      "name": "Миксим ",
-      "description": "плавать ",
+      "id": "0196746e-13bd-4704-b9f5-1e6521f98e1b",
+      "name": "sd",
+      "description": "asdasdasdasd",
       "element": "fire"
     },
     {
-      "id": "dd8c46f7-b4e7-43f1-916b-c4f26d7f77f1",
-      "name": "Захар ",
-      "description": "бешать ",
+      "id": "623baf55-bcf8-43a2-b4ac-6e1efccb000d",
+      "name": "asdasdasd",
+      "description": "dsadasdasdasd",
+      "element": "wather"
+    },
+    {
+      "id": "ed111417-d09c-4f3d-8ecd-e7f328c39611",
+      "name": "Виталик-рагалик",
+      "description": "Может делать рогалики ",
       "element": "wind"
     }
   ],
   "filters": [
-    "all",
-    "fire",
-    "wather",
-    "wind",
-    "earth  "
+    {
+      "name": "all",
+      "className": "btn btn-outline-dark"
+    },
+    {
+      "name": "fire",
+      "className": "btn btn-danger"
+    },
+    {
+      "name": "wather",
+      "className": "btn btn-primary"
+    },
+    {
+      "name": "wind",
+      "className": "btn btn-success"
+    },
+    {
+      "name": "earth",
+      "className": "btn btn-secondary"
+    }
   ]
 }

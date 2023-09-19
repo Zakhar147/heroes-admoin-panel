@@ -37,3 +37,10 @@ export const updateHeroesState_heroDel = (data) => {
         payload: data
     }
 }
+
+export const filterHeroes = (filterName) => {
+    return {
+        type: 'HEROES_FILTER_BY_ELEMENT',
+        payload: filterName
+    }
+}

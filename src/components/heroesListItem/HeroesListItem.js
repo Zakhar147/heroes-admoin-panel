@@ -1,17 +1,16 @@
-import { useHttp } from "../../reducers/http.hook";
+import { useHttp } from "../../hooks/http.hook";
 import { useDispatch, useSelector } from "react-redux";
 import { updateHeroesState_heroDel } from "../../actions";
 const HeroesListItem = ({ name, description, element, id }) => {
-    const state = useSelector(state=>state)
     const dispatch = useDispatch()
-    const {request} = useHttp();
+    const { request } = useHttp();
     let elementClassName;
 
     switch (element) {
         case 'fire':
             elementClassName = 'bg-danger bg-gradient';
             break;
-        case 'water':
+        case 'wather':
             elementClassName = 'bg-primary bg-gradient';
             break;
         case 'wind':
@@ -39,12 +38,12 @@ const HeroesListItem = ({ name, description, element, id }) => {
             <span className="position-absolute top-0 start-100 translate-middle badge border rounded-pill bg-light">
                 <button onClick={() => {
                     const data = {
-                        id, name , description, element
+                        id, name, description, element
                     }
 
                     request(`http://localhost:3001/heroes/${id}`, "DELETE")
-                           .then(request('http://localhost:3001/heroes'))
-                           .then(dispatch(updateHeroesState_heroDel(data)))
+                        .then(request('http://localhost:3001/heroes'))
+                        .then(dispatch(updateHeroesState_heroDel(data)))
 
                 }} type="button" className="btn-close btn-close" aria-label="Close"></button>
             </span>

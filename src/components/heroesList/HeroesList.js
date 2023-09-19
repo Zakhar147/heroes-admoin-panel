@@ -1,4 +1,4 @@
-import { useHttp } from '../../reducers/http.hook';
+import { useHttp } from '../../hooks/http.hook';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -12,7 +12,7 @@ import Spinner from '../spinner/Spinner';
 // Удаление идет и с json файла при помощи метода DELETE
 
 const HeroesList = () => {
-    const { heroes, heroesLoadingStatus } = useSelector(state => state);
+    const { heroes, heroesLoadingStatus, selectedFilter } = useSelector(state => state);
     const dispatch = useDispatch();
     const { request } = useHttp();
 
@@ -37,9 +37,29 @@ const HeroesList = () => {
             return <h5 className="text-center mt-5">Героев пока нет</h5>
         }
 
-        return arr.map(({ id, ...props }) => {
-            return <HeroesListItem key={id} {...props} id={id} />
-        })
+        switch (selectedFilter) {
+            case 'fire':
+                return arr.filter(item => item.element === 'fire').map(({ id, ...props }) => {
+                    return <HeroesListItem key={id} {...props} id={id} />
+                })
+            case 'wather':
+                return arr.filter(item => item.element === 'wather').map(({ id, ...props }) => {
+                    return <HeroesListItem key={id} {...props} id={id} />
+                })
+            case 'wind':
+                return arr.filter(item => item.element === 'wind').map(({ id, ...props }) => {
+                    return <HeroesListItem key={id} {...props} id={id} />
+                })
+            case 'earth':
+                return arr.filter(item => item.element === 'earth').map(({ id, ...props }) => {
+                    return <HeroesListItem key={id} {...props} id={id} />
+                })
+            default:
+                return arr.map(({ id, ...props }) => {
+                    return <HeroesListItem key={id} {...props} id={id} />
+                })
+        }
+
     }
 
     const elements = renderHeroesList(heroes);
