@@ -23,6 +23,17 @@ const HeroesListItem = ({ name, description, element, id }) => {
             elementClassName = 'bg-warning bg-gradient';
     }
 
+    const onDelete = () => {
+        const data = {
+            id, name, description, element
+        }
+
+        request(`http://localhost:3001/heroes/${id}`, "DELETE")
+            .then(request('http://localhost:3001/heroes'))
+            .then(dispatch(updateHeroesState_heroDel(data)))
+
+    }
+
     return (
         <li
             className={`card flex-row mb-4 shadow-lg text-white ${elementClassName}`}>
@@ -36,16 +47,7 @@ const HeroesListItem = ({ name, description, element, id }) => {
                 <p className="card-text">{description}</p>
             </div>
             <span className="position-absolute top-0 start-100 translate-middle badge border rounded-pill bg-light">
-                <button onClick={() => {
-                    const data = {
-                        id, name, description, element
-                    }
-
-                    request(`http://localhost:3001/heroes/${id}`, "DELETE")
-                        .then(request('http://localhost:3001/heroes'))
-                        .then(dispatch(updateHeroesState_heroDel(data)))
-
-                }} type="button" className="btn-close btn-close" aria-label="Close"></button>
+                <button onClick={() => onDelete()} type="button" className="btn-close btn-close" aria-label="Close"></button>
             </span>
         </li >
     )

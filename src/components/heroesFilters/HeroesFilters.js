@@ -35,28 +35,9 @@ const HeroesFilters = () => {
         >
           {item.name}
         </button>
-        //active
       );
     });
   };
-
-//   const renderFilters = (arr) => {
-//     return arr.map((item, index) => {
-//       return (
-//         <button
-//           onClick={(e) => {
-//             e.target.classList.add('active');
-//             dispatch(filterHeroes(item.name));
-//           } }
-//           key={index}
-//           className={`${item.className}`}
-//         >
-//           {item.name}
-//         </button>
-//         //active
-//       );
-//     });
-//   };
 
   const filtersNodes = renderFilters(filters);
 

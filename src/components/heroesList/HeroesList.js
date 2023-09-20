@@ -6,11 +6,6 @@ import { heroesFetching, heroesFetched, heroesFetchingError } from '../../action
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from '../spinner/Spinner';
 
-// Задача для этого компонента:
-// При клике на "крестик" идет удаление персонажа из общего состояния
-// Усложненная задача:
-// Удаление идет и с json файла при помощи метода DELETE
-
 const HeroesList = () => {
     const { heroes, heroesLoadingStatus, selectedFilter } = useSelector(state => state);
     const dispatch = useDispatch();
@@ -31,38 +26,19 @@ const HeroesList = () => {
         return <h5 className="text-center mt-5">Ошибка загрузки</h5>
     }
 
-    const renderHeroesList = (arr) => {
-        console.log(arr)
+    const renderHeroesList = (arr, selectedFilter) => {
         if (arr.length === 0) {
             return <h5 className="text-center mt-5">Героев пока нет</h5>
         }
 
-        switch (selectedFilter) {
-            case 'fire':
-                return arr.filter(item => item.element === 'fire').map(({ id, ...props }) => {
-                    return <HeroesListItem key={id} {...props} id={id} />
-                })
-            case 'wather':
-                return arr.filter(item => item.element === 'wather').map(({ id, ...props }) => {
-                    return <HeroesListItem key={id} {...props} id={id} />
-                })
-            case 'wind':
-                return arr.filter(item => item.element === 'wind').map(({ id, ...props }) => {
-                    return <HeroesListItem key={id} {...props} id={id} />
-                })
-            case 'earth':
-                return arr.filter(item => item.element === 'earth').map(({ id, ...props }) => {
-                    return <HeroesListItem key={id} {...props} id={id} />
-                })
-            default:
-                return arr.map(({ id, ...props }) => {
-                    return <HeroesListItem key={id} {...props} id={id} />
-                })
-        }
-
+        const filterHeroes = selectedFilter === 'all'
+                           ? arr 
+                           : arr.filter(item => item.element === selectedFilter);
+        
+        return filterHeroes.map(({id, ...props}) => <HeroesListItem key={id} {...props} id={id} />)
     }
 
-    const elements = renderHeroesList(heroes);
+    const elements = renderHeroesList(heroes, selectedFilter);
     return (
         <ul>
             {elements}

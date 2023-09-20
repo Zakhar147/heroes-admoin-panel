@@ -1,22 +1,34 @@
 {
   "heroes": [
     {
-      "id": "0196746e-13bd-4704-b9f5-1e6521f98e1b",
-      "name": "sd",
-      "description": "asdasdasdasd",
+      "id": "f0d0121e-cc05-43a6-9925-72bd263d9b0b",
+      "name": "Захар",
+      "description": "умеет летать прыгать гризли делать",
+      "element": "wind"
+    },
+    {
+      "id": "ee993a32-87b0-42a2-9378-1d39d5382214",
+      "name": "Максим ",
+      "description": "умеет горячие бутеры делать",
       "element": "fire"
     },
     {
-      "id": "623baf55-bcf8-43a2-b4ac-6e1efccb000d",
-      "name": "asdasdasd",
-      "description": "dsadasdasdasd",
-      "element": "wather"
+      "id": "4c6785df-2f17-4fac-863d-8d9e03d8864d",
+      "name": "Настя",
+      "description": "умеет всё , она аватар",
+      "element": "all"
     },
     {
-      "id": "ed111417-d09c-4f3d-8ecd-e7f328c39611",
-      "name": "Виталик-рагалик",
-      "description": "Может делать рогалики ",
-      "element": "wind"
+      "id": "0d54bf66-50ef-480c-9d77-21f761ac2fb0",
+      "name": "Виталик рагалик",
+      "description": "рагалики умеет делать это и так понятно",
+      "element": "earth"
+    },
+    {
+      "id": "5e421276-dcd2-4e5b-bced-6f4586b19316",
+      "name": "Катара",
+      "description": "женщина этого достаточно",
+      "element": "wather"
     }
   ],
   "filters": [
