@@ -12,7 +12,7 @@ import { updateHeroesState_heroAdd } from "../../actions";
 import Spinner from "../spinner/Spinner";
 
 const HeroesAddForm = () => {
-  const { filters, filtersLoadingStatus } = useSelector((state) => state);
+  const { filters, filtersLoadingStatus } = useSelector((state) => state.filterReducer);
   const dispatch = useDispatch();
   const { request } = useHttp();
 
