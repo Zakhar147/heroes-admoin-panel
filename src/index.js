@@ -8,10 +8,10 @@ import store from './store';
 import './styles/index.scss';
 
 ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>
 
-  <Provider store={store}>
-    <App />
-  </Provider>
   ,
   document.getElementById('root')
 );

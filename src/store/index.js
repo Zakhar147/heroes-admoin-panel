@@ -1,8 +1,28 @@
-import { createStore, combineReducers } from 'redux';
-import heroReducer from '../reducers/heroes';
-import filterReducer from '../reducers/filters';
+import { configureStore } from '@reduxjs/toolkit'
+import  heroReducer from '../components/heroesList/heroSplice';
+import filterReducer from "../components/heroesFilters/filterSlice";
 
-const store = createStore(combineReducers({ heroReducer, filterReducer }),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+console.log(filterReducer)
+const reducer = {
+    heroReducer: heroReducer,
+    filterReducer: filterReducer
+}
+
+const stringMiddleare = () => (next) => (action) => {
+    if (typeof action == 'string') {
+        return next({ type: action })
+    }
+    return next(action)
+}
+
+
+
+const store = configureStore({
+    reducer,
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleare)
+})
 
 export default store;
+
+
+
