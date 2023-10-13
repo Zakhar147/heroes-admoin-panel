@@ -1,25 +1,40 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { useHttp } from '../../hooks/http.hook';
+
+export const fetchHeroes = createAsyncThunk(
+    'hero/fetchHero',
+    async () => {
+        const request = useHttp();
+        return await request("http://localhost:3001/heroes")
+    }
+)
 
 const initialState = {
     heroes: [],
-    heroesLoadingStatus: 'idle',
-}
+    heroesStatus: 'ide'
+};
 
-const heroSlice = createSlice({  
-    name: 'heroes',
+const heroSlice = createSlice({
+    name: 'hero',
     initialState,
     reducers: {
-        heroesFetching: state => {state.heroesLoadingStatus = 'loading'},
-        heroesFetched: (state, action)=> {
-            state.heroes = action.payload
-            state.heroesLoadingStatus = 'idle'
+        updateHeroesState_heroAdd: (state, action) => {
+            state.heroes.push(action.payload)
         },
-        heroesFetchingError: state => {state.heroesLoadingStatus = 'error'},
-        updateHeroesState_heroAdd: (state,action) => {state.heroes.push(action.payload)},
-        updateHeroesState_heroDel: (state, action) => {state.heroes = state.heroes.filter(item => item.id !== action.payload.id)}
+        updateHeroesState_heroDel: (state, action) => {
+            state.heroes = state.heroes.filter(item => item.id !== action.payload.id)
+        }
+    },
+    extraReducers: (builder) => {
+        builder.addCase(fetchHeroes.pending, state => { state.heroesStatus = 'loading' });
+        builder.addCase(fetchHeroes.fulfilled, (state, action) => {
+            state.heroes = action.payload;
+            state.heroesStatus = 'ide';
+        });
+        builder.addCase(fetchHeroes.rejected, state => { state.heroesStatus = 'error' })
     }
-});
-const {actions, reducer} = heroSlice    
+})
+const { actions, reducer } = heroSlice;
 
 export default reducer;
 export const {

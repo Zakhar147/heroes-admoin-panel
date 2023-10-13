@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage, useField } from "formik";
 import { v4 as uuidv4 } from "uuid";
 import * as Yup from 'yup'
 
-import { filtersFetching, filtersFetched, filtersFetchingError } from "../heroesFilters/filterSlice"; 
+import { fetchFilters } from "../heroesFilters/filterSlice";
 
 import { useHttp } from "../../hooks/http.hook";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,16 +12,13 @@ import { updateHeroesState_heroAdd } from "../heroesList/heroSplice";
 import Spinner from "../spinner/Spinner";
 
 const HeroesAddForm = () => {
-  const  filters = useSelector((state) => state.filterReducer.filters);
-  const  filtersLoadingStatus = useSelector((state) => state.filterReducer.filtersLoadingStatus);
+  const filters = useSelector((state) => state.filterReducer.filters);
+  const filtersLoadingStatus = useSelector((state) => state.filterReducer.filtersLoadingStatus);
   const dispatch = useDispatch();
   const { request } = useHttp();
 
   useEffect(() => {
-    dispatch(filtersFetching())
-    request("http://localhost:3001/filters")
-      .then((res) => dispatch(filtersFetched(res)))
-      .catch(() => filtersFetchingError());
+    dispatch(fetchFilters())
   }, []);
 
 
@@ -29,6 +26,7 @@ const HeroesAddForm = () => {
     return <Spinner />;
   } else if (filtersLoadingStatus === "error") {
     return <h5 className="text-center mt-5">Ошибка загрузки</h5>;
+
   }
 
   const renderFilters = (arr) => {

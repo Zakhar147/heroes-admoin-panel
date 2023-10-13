@@ -41,6 +41,12 @@
       "name": "Misha",
       "description": "nothing good",
       "element": "wather"
+    },
+    {
+      "id": "297822d7-9017-4cc0-8ef3-7ce189517268",
+      "name": "Zahar",
+      "description": "asddasdasd",
+      "element": "all"
     }
   ],
   "filters": [
