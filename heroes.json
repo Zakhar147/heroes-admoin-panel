@@ -19,34 +19,10 @@
       "element": "all"
     },
     {
-      "id": "0d54bf66-50ef-480c-9d77-21f761ac2fb0",
-      "name": "Виталик рагалик",
-      "description": "рагалики умеет делать это и так понятно",
-      "element": "earth"
-    },
-    {
-      "id": "5e421276-dcd2-4e5b-bced-6f4586b19316",
-      "name": "Катара",
-      "description": "женщина этого достаточно",
+      "id": "7ccb5852-0ff8-46ae-8550-ffe080a2a00c",
+      "name": "Thor",
+      "description": "умеет делать ничего",
       "element": "wather"
-    },
-    {
-      "id": "916ae9a4-2d14-4e14-8f55-f1079fea24a5",
-      "name": "Андрей",
-      "description": "ничего не умеет делать",
-      "element": "all"
-    },
-    {
-      "id": "44da884e-6326-4cdc-aa37-773b5aaa8462",
-      "name": "Misha",
-      "description": "nothing good",
-      "element": "wather"
-    },
-    {
-      "id": "297822d7-9017-4cc0-8ef3-7ce189517268",
-      "name": "Zahar",
-      "description": "asddasdasd",
-      "element": "all"
     }
   ],
   "filters": [

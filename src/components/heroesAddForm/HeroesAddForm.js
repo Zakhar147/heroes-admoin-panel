@@ -15,7 +15,7 @@ const HeroesAddForm = () => {
   const filters = useSelector((state) => state.filterReducer.filters);
   const filtersLoadingStatus = useSelector((state) => state.filterReducer.filtersLoadingStatus);
   const dispatch = useDispatch();
-  const { request } = useHttp();
+  const request = useHttp();
 
   useEffect(() => {
     dispatch(fetchFilters())

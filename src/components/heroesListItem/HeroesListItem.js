@@ -5,7 +5,7 @@ import { updateHeroesState_heroDel } from "../heroesList/heroSplice";
 
 const HeroesListItem = ({ name, description, element, id }) => {
     const dispatch = useDispatch()
-    const { request } = useHttp();
+    const request  = useHttp();
     let elementClassName;
 
     switch (element) {

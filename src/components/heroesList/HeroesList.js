@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useHttp } from '../../hooks/http.hook';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectAll } from './heroSplice';
 
 import { fetchHeroes } from './heroSplice';
 import HeroesListItem from "../heroesListItem/HeroesListItem";
@@ -25,7 +26,7 @@ const HeroesList = () => {
     const heroesLoadingStatus = useSelector(state => state.heroReducer.heroesLoadingStatus);
     const filteredElements = useSelector(filteredHeroesSelector)
     const dispatch = useDispatch();
-    const { request } = useHttp();
+    // const { request } = useHttp();
 
     useEffect(() => {
         dispatch(fetchHeroes())
