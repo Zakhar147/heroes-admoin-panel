@@ -25,7 +25,7 @@ const HeroesFilters = () => {
   if (filtersLoadingStatus === "loading") {
     return <Spinner />;
   } else if (filtersLoadingStatus === "error") {
-    return <h5 className="text-center mt-5">Ошибка загрузки</h5>;
+    return <h5 className="text-center mt-5">Loading error</h5>;
   }
 
   const renderFilters = (arr) => {

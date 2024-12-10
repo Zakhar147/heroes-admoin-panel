@@ -1,50 +1,30 @@
 {
-  "heroes": [
-    {
-      "id": "f0d0121e-cc05-43a6-9925-72bd263d9b0b",
-      "name": "Захар",
-      "description": "умеет летать прыгать гризли делать",
-      "element": "wind"
-    },
-    {
-      "id": "ee993a32-87b0-42a2-9378-1d39d5382214",
-      "name": "Максим ",
-      "description": "умеет горячие бутеры делать",
-      "element": "fire"
-    },
-    {
-      "id": "4c6785df-2f17-4fac-863d-8d9e03d8864d",
-      "name": "Настя",
-      "description": "умеет всё , она аватар",
-      "element": "all"
-    },
-    {
-      "id": "7ccb5852-0ff8-46ae-8550-ffe080a2a00c",
-      "name": "Thor",
-      "description": "умеет делать ничего",
-      "element": "wather"
-    }
-  ],
+  "heroes": [],
   "filters": [
     {
       "name": "all",
-      "className": "btn btn-outline-dark"
+      "className": "btn btn-outline-dark",
+      "id": "ff8d"
     },
     {
       "name": "fire",
-      "className": "btn btn-danger"
+      "className": "btn btn-danger",
+      "id": "a2b5"
     },
     {
       "name": "wather",
-      "className": "btn btn-primary"
+      "className": "btn btn-primary",
+      "id": "8195"
     },
     {
       "name": "wind",
-      "className": "btn btn-success"
+      "className": "btn btn-success",
+      "id": "0a20"
     },
     {
       "name": "earth",
-      "className": "btn btn-secondary"
+      "className": "btn btn-secondary",
+      "id": "ce75"
     }
   ]
 }

@@ -49,14 +49,14 @@ const HeroesAddForm = () => {
       }}
       validationSchema={Yup.object({
         name: Yup.string()
-          .min(2, 'Минимум 2 символа!')
-          .required('Обазательное поле!'),
+          .min(2, 'Minimum 2 characters!')
+          .required('Required field!'),
         description: Yup.string()
-          .min(10, 'Не мнее 10 символов')
-          .required('Обазательное поле!'),
+          .min(10, 'At least 10 characters')
+          .required('Required field!'),
         element: Yup.string()
-          .required('Обязательное поле')
-          .notOneOf(['Я владею элементом...'], 'Выберите элемент')
+          .required('Required field!')
+          .notOneOf(['I own the element...'], 'Select element')
       })}
       onSubmit={(values) => {
         const data = JSON.stringify({ id: uuidv4(), ...values }, null, 2);
